@@ -1,7 +1,7 @@
 "use client";
 
-import type { Hospital, Position } from "@/lib/types";
 import { useCallback, useState } from "react";
+import type { Hospital, Position } from "@/lib/types";
 
 export function useMapInteraction() {
   const [selectedHospitalId, setSelectedHospitalId] = useState<string | null>(

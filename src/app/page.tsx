@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { type FilterState, FiltersSidebar } from "@/components/filters-sidebar";
 import { MapContainer } from "@/components/map-container";
 import { ResultCards } from "@/components/result-cards";
@@ -7,7 +8,6 @@ import { useHospitalSearch } from "@/hooks/use-hospital-search";
 import { useMapInteraction } from "@/hooks/use-map-interaction";
 import type { Hospital } from "@/lib/types";
 import { validateAllAddresses } from "@/lib/validate-addresses";
-import { useEffect, useState } from "react";
 
 export default function HomePage() {
   const [filters, setFilters] = useState<FilterState>({

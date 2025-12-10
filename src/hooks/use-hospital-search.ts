@@ -1,9 +1,9 @@
 "use client";
 
+import { useCallback, useEffect, useState } from "react";
 import type { FilterState } from "@/components/filters-sidebar";
 import { sampleHospitals } from "@/lib/sample-hospitals";
 import type { Hospital, Position } from "@/lib/types";
-import { useCallback, useEffect, useState } from "react";
 
 function calculateDistance(pos1: Position, pos2: Position): number {
   const [lng1, lat1] = pos1;

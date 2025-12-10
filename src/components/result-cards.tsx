@@ -1,7 +1,7 @@
 "use client";
 
-import type { Hospital } from "@/lib/types";
 import { useEffect, useRef } from "react";
+import type { Hospital } from "@/lib/types";
 import { HospitalCard } from "./hospital-card";
 
 interface ResultCardsProps {
