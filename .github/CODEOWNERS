@@ -1,0 +1,9 @@
+# Code owners file
+# This file defines reviewers for pull requests
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# All files
+* @tylerzey
+
+
+
