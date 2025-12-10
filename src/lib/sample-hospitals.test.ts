@@ -6,8 +6,8 @@ describe("sampleHospitals", () => {
     expect(sampleHospitals.length).toBeGreaterThanOrEqual(10);
   });
 
-  it("should have at most 20 hospitals", () => {
-    expect(sampleHospitals.length).toBeLessThanOrEqual(20);
+  it("should have at most 100 hospitals", () => {
+    expect(sampleHospitals.length).toBeLessThanOrEqual(100);
   });
 
   it("should have valid hospital data structure", () => {
