@@ -1,8 +1,8 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { callAutocomplete } from "@/lib/location-api-client";
 import type { Place } from "@/lib/types";
-import { useEffect, useRef, useState } from "react";
 
 interface SearchBarProps {
   onSearch: (query: string, position?: [number, number]) => void;
