@@ -1447,7 +1447,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/postcss@npm:^4.1.17":
+"@tailwindcss/postcss@npm:4.1.17":
   version: 4.1.17
   resolution: "@tailwindcss/postcss@npm:4.1.17"
   dependencies:
@@ -2205,7 +2205,7 @@ __metadata:
   resolution: "hospital-search@workspace:."
   dependencies:
     "@biomejs/biome": "npm:2.3.8"
-    "@tailwindcss/postcss": "npm:^4.1.17"
+    "@tailwindcss/postcss": "npm:4.1.17"
     "@testing-library/jest-dom": "npm:6.9.1"
     "@testing-library/react": "npm:16.3.0"
     "@types/node": "npm:24.10.3"
