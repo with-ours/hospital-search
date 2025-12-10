@@ -14,7 +14,7 @@ export function SearchBar({ onSearch, onLocationSelect }: SearchBarProps) {
   const [suggestions, setSuggestions] = useState<Place[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const debounceTimer = useRef<NodeJS.Timeout>();
+  const debounceTimer = useRef<NodeJS.Timeout | undefined>(undefined);
   const searchRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
