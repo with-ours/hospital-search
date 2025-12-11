@@ -61,7 +61,9 @@ export function FiltersSidebar({
                   onChange={() => handleDistanceChange(option.value)}
                   className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300"
                 />
-                <span className="ml-3 text-sm text-gray-700">{option.label}</span>
+                <span className="ml-3 text-sm text-gray-700">
+                  {option.label}
+                </span>
               </label>
             ))}
           </div>
@@ -83,7 +85,9 @@ export function FiltersSidebar({
                   onChange={() => handleCategoryToggle(option.value)}
                   className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                 />
-                <span className="ml-3 text-sm text-gray-700">{option.label}</span>
+                <span className="ml-3 text-sm text-gray-700">
+                  {option.label}
+                </span>
               </label>
             ))}
           </div>
