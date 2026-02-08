@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { type FilterState, FiltersSidebar } from "@/components/filters-sidebar";
 import { MapContainer } from "@/components/map-container";
 import { ResultCards } from "@/components/result-cards";
 import { useHospitalSearch } from "@/hooks/use-hospital-search";
 import { useMapInteraction } from "@/hooks/use-map-interaction";
-import type { Hospital } from "@/lib/types";
+import { callCalculateRoutes } from "@/lib/location-api-client";
+import type { Hospital, RouteData } from "@/lib/types";
 import { validateAllAddresses } from "@/lib/validate-addresses";
 
 export default function HomePage() {
@@ -14,6 +15,11 @@ export default function HomePage() {
     distance: 25,
     categories: [],
   });
+
+  const [routeData, setRouteData] = useState<RouteData | null>(null);
+  const [loadingRouteForId, setLoadingRouteForId] = useState<string | null>(
+    null,
+  );
 
   const {
     selectedHospitalId,
@@ -33,6 +39,54 @@ export default function HomePage() {
     selectHospital(hospital, false); // false indicates this came from a marker click
   };
 
+  const handleGetDirections = useCallback(
+    async (hospital: Hospital) => {
+      setLoadingRouteForId(hospital.PlaceId);
+      try {
+        const response = await callCalculateRoutes({
+          Origin: mapCenter,
+          Destination: hospital.Position,
+        });
+
+        if (!response.ok) {
+          console.error("Routes API error:", response.status);
+          return;
+        }
+
+        const data = await response.json();
+        const route = data.Routes?.[0];
+        if (!route) {
+          console.error("No route found");
+          return;
+        }
+
+        // Collect coordinates from all legs
+        const coordinates = route.Legs.flatMap(
+          (leg: { Geometry: { LineString: [number, number][] } }) =>
+            leg.Geometry.LineString,
+        );
+
+        setRouteData({
+          coordinates,
+          distanceMeters: route.Summary.Distance,
+          durationSeconds: route.Summary.Duration,
+        });
+
+        // Select the hospital to highlight it
+        selectHospital(hospital, false);
+      } catch (error) {
+        console.error("Failed to calculate route:", error);
+      } finally {
+        setLoadingRouteForId(null);
+      }
+    },
+    [mapCenter, selectHospital],
+  );
+
+  const handleClearRoute = useCallback(() => {
+    setRouteData(null);
+  }, []);
+
   // Expose validation function to console for manual testing
   useEffect(() => {
     if (process.env.NODE_ENV === "development") {
@@ -40,11 +94,11 @@ export default function HomePage() {
       (
         window as unknown as { validateAddresses?: () => Promise<void> }
       ).validateAddresses = () => {
-        console.log("🔍 Starting address validation...");
+        console.log("Starting address validation...");
         return validateAllAddresses();
       };
       console.log(
-        "💡 Tip: Run validateAddresses() in the console to validate all hospital addresses",
+        "Tip: Run validateAddresses() in the console to validate all hospital addresses",
       );
     }
   }, []);
@@ -64,6 +118,8 @@ export default function HomePage() {
             hospitals={hospitals}
             selectedHospitalId={selectedHospitalId}
             onHospitalSelect={handleHospitalSelect}
+            onGetDirections={handleGetDirections}
+            loadingRouteForId={loadingRouteForId}
           />
         </div>
 
@@ -77,6 +133,8 @@ export default function HomePage() {
             shouldCenterMap={shouldCenterMap}
             onMarkerClick={handleMarkerClick}
             onCenterComplete={clearShouldCenterMap}
+            routeData={routeData}
+            onClearRoute={handleClearRoute}
           />
         </div>
       </div>

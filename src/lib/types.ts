@@ -61,3 +61,36 @@ export type Hospital = Place & {
   hours?: string;
   category?: string;
 };
+
+// Routes API types
+export type CalculateRoutesParams = {
+  Origin: Position;
+  Destination: Position;
+  TravelMode?: "Car" | "Pedestrian" | "Truck";
+};
+
+export type RouteLeg = {
+  Geometry: {
+    LineString: Position[];
+  };
+  Distance: number;
+  DurationSeconds: number;
+};
+
+export type Route = {
+  Legs: RouteLeg[];
+  Summary: {
+    Distance: number;
+    Duration: number;
+  };
+};
+
+export type CalculateRoutesResponse = {
+  Routes: Route[];
+};
+
+export type RouteData = {
+  coordinates: Position[];
+  distanceMeters: number;
+  durationSeconds: number;
+};
