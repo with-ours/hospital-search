@@ -79,13 +79,16 @@ export const callSearchNearby = async (
 export const callCalculateRoutes = async (
   params: CalculateRoutesParams,
 ): Promise<Response> => {
-  const url = `${baseUrl}/routes?key=${apiKey}`;
+  const url = `${baseUrl}/v2/routes?key=${apiKey}`;
   return fetch(url, {
     method: "POST",
     headers: {
       accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(params),
+    body: JSON.stringify({
+      ...params,
+      LegGeometryFormat: "Simple",
+    }),
   });
 };

@@ -7,7 +7,7 @@ import { ResultCards } from "@/components/result-cards";
 import { useHospitalSearch } from "@/hooks/use-hospital-search";
 import { useMapInteraction } from "@/hooks/use-map-interaction";
 import { callCalculateRoutes } from "@/lib/location-api-client";
-import type { Hospital, RouteData } from "@/lib/types";
+import type { Hospital, Position, RouteData } from "@/lib/types";
 import { validateAllAddresses } from "@/lib/validate-addresses";
 
 export default function HomePage() {
@@ -26,8 +26,17 @@ export default function HomePage() {
     mapCenter,
     shouldCenterMap,
     selectHospital,
+    updateMapCenter,
     clearShouldCenterMap,
   } = useMapInteraction();
+
+  const handleLocationChange = useCallback(
+    (position: Position) => {
+      updateMapCenter(position);
+      setRouteData(null);
+    },
+    [updateMapCenter],
+  );
 
   const { hospitals, center } = useHospitalSearch(filters, mapCenter);
 
@@ -107,7 +116,11 @@ export default function HomePage() {
     <div className="h-screen flex overflow-hidden">
       {/* Filters Sidebar */}
       <div className="hidden md:block w-64 flex-shrink-0">
-        <FiltersSidebar filters={filters} onFiltersChange={setFilters} />
+        <FiltersSidebar
+          filters={filters}
+          onFiltersChange={setFilters}
+          onLocationChange={handleLocationChange}
+        />
       </div>
 
       {/* Map and Results */}
