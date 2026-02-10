@@ -7,7 +7,7 @@ export function useMapInteraction() {
   const [selectedHospitalId, setSelectedHospitalId] = useState<string | null>(
     null,
   );
-  const [mapCenter, setMapCenter] = useState<Position>([-73.965, 40.765]);
+  const [mapCenter, setMapCenter] = useState<Position>([-73.9857, 40.7484]);
   const [shouldCenterMap, setShouldCenterMap] = useState(false);
 
   const selectHospital = useCallback(

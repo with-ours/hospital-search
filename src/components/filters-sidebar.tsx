@@ -1,5 +1,9 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+import { callAutocomplete } from "@/lib/location-api-client";
+import type { Place, Position } from "@/lib/types";
+
 export interface FilterState {
   distance: number;
   categories: string[];
@@ -8,6 +12,7 @@ export interface FilterState {
 interface FiltersSidebarProps {
   filters: FilterState;
   onFiltersChange: (filters: FilterState) => void;
+  onLocationChange?: (position: Position, label: string) => void;
 }
 
 const distanceOptions = [
@@ -25,10 +30,78 @@ const categoryOptions = [
   { value: "Pharmacy", label: "Pharmacy" },
 ];
 
+const DEFAULT_LOCATION_LABEL = "350 5th Ave, New York, NY 10118";
+
 export function FiltersSidebar({
   filters,
   onFiltersChange,
+  onLocationChange,
 }: FiltersSidebarProps) {
+  const [locationQuery, setLocationQuery] = useState(DEFAULT_LOCATION_LABEL);
+  const [suggestions, setSuggestions] = useState<Place[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const debounceTimer = useRef<NodeJS.Timeout | undefined>(undefined);
+  const locationRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        locationRef.current &&
+        !locationRef.current.contains(event.target as Node)
+      ) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    if (debounceTimer.current) {
+      clearTimeout(debounceTimer.current);
+    }
+
+    if (locationQuery.length < 2 || locationQuery === DEFAULT_LOCATION_LABEL) {
+      setSuggestions([]);
+      setShowSuggestions(false);
+      return;
+    }
+
+    debounceTimer.current = setTimeout(async () => {
+      setIsLoading(true);
+      try {
+        const response = await callAutocomplete({
+          QueryText: locationQuery,
+          MaxResults: 5,
+          Filter: { IncludeCountries: ["USA"] },
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setSuggestions(data.ResultItems || []);
+          setShowSuggestions(true);
+        }
+      } catch (error) {
+        console.error("Location autocomplete error:", error);
+        setSuggestions([]);
+      } finally {
+        setIsLoading(false);
+      }
+    }, 300);
+
+    return () => {
+      if (debounceTimer.current) {
+        clearTimeout(debounceTimer.current);
+      }
+    };
+  }, [locationQuery]);
+
+  const handleLocationSelect = (place: Place) => {
+    setLocationQuery(place.Address.Label);
+    setShowSuggestions(false);
+    onLocationChange?.(place.Position, place.Address.Label);
+  };
+
   const handleDistanceChange = (distance: number) => {
     onFiltersChange({ ...filters, distance });
   };
@@ -44,6 +117,67 @@ export function FiltersSidebar({
     <div className="bg-white border-r border-gray-200 h-full flex flex-col">
       <div className="p-6 flex-1 overflow-y-auto">
         <h2 className="text-xl font-semibold mb-6 text-gray-900">Filters</h2>
+
+        <div className="mb-8" ref={locationRef}>
+          <h3 className="text-sm font-medium text-gray-700 mb-2">
+            Your Location
+          </h3>
+          <div className="relative">
+            <input
+              type="text"
+              value={locationQuery}
+              onChange={(e) => setLocationQuery(e.target.value)}
+              placeholder="Enter your address..."
+              className="w-full px-3 py-2 pl-8 text-sm text-gray-900 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            />
+            <div className="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
+              <svg
+                className="h-4 w-4 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <title>Location</title>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+            </div>
+            {isLoading && (
+              <div className="absolute inset-y-0 right-0 pr-2.5 flex items-center">
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-500" />
+              </div>
+            )}
+          </div>
+          {showSuggestions && suggestions.length > 0 && (
+            <div className="absolute z-50 w-52 mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+              {suggestions.map((place) => (
+                <button
+                  key={place.PlaceId}
+                  type="button"
+                  onClick={() => handleLocationSelect(place)}
+                  className="w-full text-left px-3 py-2 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition-colors"
+                >
+                  <div className="text-sm font-medium text-gray-900 truncate">
+                    {place.Title}
+                  </div>
+                  <div className="text-xs text-gray-500 truncate">
+                    {place.Address.Label}
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
 
         <div className="mb-8">
           <h3 className="text-sm font-medium text-gray-700 mb-4">Distance</h3>

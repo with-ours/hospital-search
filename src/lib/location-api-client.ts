@@ -1,5 +1,6 @@
 import type {
   AutocompleteParams,
+  CalculateRoutesParams,
   GeocodeParams,
   SearchNearbyParams,
   SearchTextParams,
@@ -72,5 +73,22 @@ export const callSearchNearby = async (
       "Content-Type": "application/json",
     },
     body: JSON.stringify(params),
+  });
+};
+
+export const callCalculateRoutes = async (
+  params: CalculateRoutesParams,
+): Promise<Response> => {
+  const url = `${baseUrl}/v2/routes?key=${apiKey}`;
+  return fetch(url, {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      ...params,
+      LegGeometryFormat: "Simple",
+    }),
   });
 };

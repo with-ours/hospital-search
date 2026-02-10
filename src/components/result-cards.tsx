@@ -8,12 +8,16 @@ interface ResultCardsProps {
   hospitals: Hospital[];
   selectedHospitalId: string | null;
   onHospitalSelect: (hospital: Hospital) => void;
+  onGetDirections?: (hospital: Hospital) => void;
+  loadingRouteForId?: string | null;
 }
 
 export function ResultCards({
   hospitals,
   selectedHospitalId,
   onHospitalSelect,
+  onGetDirections,
+  loadingRouteForId,
 }: ResultCardsProps) {
   const cardRefs = useRef<Map<string, HTMLDivElement>>(new Map());
   const containerRef = useRef<HTMLDivElement>(null);
@@ -76,6 +80,8 @@ export function ResultCards({
             hospital={hospital}
             isSelected={selectedHospitalId === hospital.PlaceId}
             onClick={() => onHospitalSelect(hospital)}
+            onGetDirections={onGetDirections}
+            isLoadingRoute={loadingRouteForId === hospital.PlaceId}
           />
         </div>
       ))}
