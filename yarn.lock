@@ -558,10 +558,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mapbox/tiny-sdf@npm:^2.0.7":
-  version: 2.0.7
-  resolution: "@mapbox/tiny-sdf@npm:2.0.7"
-  checksum: 10c0/f117d8537ee4b5ee2deed54b9b426792744c15a649681305b4fb21b608b7c6a815015f015cd612923cc8efa30424d0440abfc1af2c85eda00a726024bb4f3ede
+"@mapbox/tiny-sdf@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@mapbox/tiny-sdf@npm:2.1.0"
+  checksum: 10c0/8303c005fc0f1022c44b8b6cd8a3334a3e18f3d3cb56104df3633778e7dd032dc52b2e0712eca92b3b73a40d0bf66f5c2143abe8706a6af7cd0c5ea983d356a8
   languageName: node
   linkType: hard
 
@@ -1662,7 +1662,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:6.0.1"
     autoprefixer: "npm:10.5.0"
     jsdom: "npm:29.0.2"
-    maplibre-gl: "npm:5.23.0"
+    maplibre-gl: "npm:5.24.0"
     next: "npm:16.2.4"
     postcss: "npm:8.5.10"
     react: "npm:19.2.5"
@@ -1959,13 +1959,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"maplibre-gl@npm:5.23.0":
-  version: 5.23.0
-  resolution: "maplibre-gl@npm:5.23.0"
+"maplibre-gl@npm:5.24.0":
+  version: 5.24.0
+  resolution: "maplibre-gl@npm:5.24.0"
   dependencies:
     "@mapbox/jsonlint-lines-primitives": "npm:^2.0.2"
     "@mapbox/point-geometry": "npm:^1.1.0"
-    "@mapbox/tiny-sdf": "npm:^2.0.7"
+    "@mapbox/tiny-sdf": "npm:^2.1.0"
     "@mapbox/unitbezier": "npm:^0.0.1"
     "@mapbox/vector-tile": "npm:^2.0.4"
     "@mapbox/whoots-js": "npm:^3.1.0"
@@ -1982,7 +1982,7 @@ __metadata:
     potpack: "npm:^2.1.0"
     quickselect: "npm:^3.0.0"
     tinyqueue: "npm:^3.0.0"
-  checksum: 10c0/9c244e5a873dddf492bd41ec625aee413edf98c6a887fb357af50ef3749c78e040eac4eff82badd44e6769f9f9a2abc10d08a9ae1937432735bd90dc9cb08a51
+  checksum: 10c0/4ebe63987d307a8133a8cce6b3a414c2ca1b9901b98b2867590d4ce517bdc82c46900610b7693d6eeffb792271596751cf0bf40e59ee7d5e5c779bef9296cf10
   languageName: node
   linkType: hard
 
