@@ -78,6 +78,10 @@ export function MapContainer({
       center: initialCenter.current,
       zoom: initialZoom.current,
       attributionControl: false,
+      // The upstream Standard style ships filters with null operands, so the
+      // validator logs a warning per layer. Keep validation in dev, where it
+      // still catches mistakes in the layers we add ourselves.
+      validateStyle: process.env.NODE_ENV !== "production",
     });
 
     mapInstance.addControl(new maplibregl.NavigationControl(), "top-right");
