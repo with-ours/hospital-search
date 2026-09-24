@@ -17,6 +17,11 @@ interface MapContainerProps {
   onClearRoute?: () => void;
 }
 
+// Turbopack hashes maplibre's worker and its shared chunk independently without
+// rewriting the worker's relative import of the shared file, so the default
+// worker URL 404s. Serve the pair from /public instead.
+maplibregl.setWorkerUrl("/maplibre/maplibre-gl-worker.mjs");
+
 const ROUTE_SOURCE_ID = "route-line";
 const ROUTE_LAYER_ID = "route-line-layer";
 

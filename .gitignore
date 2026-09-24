@@ -35,3 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Copied from node_modules at build time (see scripts/copy-maplibre-worker.mjs)
+/public/maplibre
