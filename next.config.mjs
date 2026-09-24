@@ -1,19 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [
-          {
-            key: "Strict-Transport-Security",
-            value: "max-age=63072000; includeSubDomains",
-          },
-        ],
-      },
-    ];
-  },
+  // Security headers (CSP, HSTS, X-Frame-Options) are served by Amplify via
+  // customHttp.yml so they apply to static assets as well as SSR responses.
+  poweredByHeader: false,
 };
 
 export default nextConfig;
