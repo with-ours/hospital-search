@@ -5,21 +5,25 @@ A hospital search interface built with Next.js, Tailwind CSS, and MapLibre GL JS
 ## Setup
 
 1. Install dependencies:
+
    ```bash
    yarn install
    ```
 
 2. Configure environment variables:
+
    ```bash
    cp .env.example .env.local
    ```
-   
+
    Then edit `.env.local` and add your API key:
+
    ```
    NEXT_PUBLIC_LOCATION_SERVICES_API_KEY=your_api_key_here
    ```
 
 3. Run the development server:
+
    ```bash
    yarn dev
    ```
