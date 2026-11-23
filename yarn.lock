@@ -84,20 +84,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/biome@npm:2.6.6":
-  version: 2.6.6
-  resolution: "@biomejs/biome@npm:2.6.6"
+"@biomejs/biome@npm:2.6.8":
+  version: 2.6.8
+  resolution: "@biomejs/biome@npm:2.6.8"
   dependencies:
-    "@biomejs/cli-android-arm64": "npm:2.6.6"
-    "@biomejs/cli-android-x64": "npm:2.6.6"
-    "@biomejs/cli-darwin-arm64": "npm:2.6.6"
-    "@biomejs/cli-darwin-x64": "npm:2.6.6"
-    "@biomejs/cli-linux-arm64": "npm:2.6.6"
-    "@biomejs/cli-linux-arm64-musl": "npm:2.6.6"
-    "@biomejs/cli-linux-x64": "npm:2.6.6"
-    "@biomejs/cli-linux-x64-musl": "npm:2.6.6"
-    "@biomejs/cli-win32-arm64": "npm:2.6.6"
-    "@biomejs/cli-win32-x64": "npm:2.6.6"
+    "@biomejs/cli-android-arm64": "npm:2.6.8"
+    "@biomejs/cli-android-x64": "npm:2.6.8"
+    "@biomejs/cli-darwin-arm64": "npm:2.6.8"
+    "@biomejs/cli-darwin-x64": "npm:2.6.8"
+    "@biomejs/cli-linux-arm64": "npm:2.6.8"
+    "@biomejs/cli-linux-arm64-musl": "npm:2.6.8"
+    "@biomejs/cli-linux-x64": "npm:2.6.8"
+    "@biomejs/cli-linux-x64-musl": "npm:2.6.8"
+    "@biomejs/cli-win32-arm64": "npm:2.6.8"
+    "@biomejs/cli-win32-x64": "npm:2.6.8"
   dependenciesMeta:
     "@biomejs/cli-android-arm64":
       optional: true
@@ -121,76 +121,76 @@ __metadata:
       optional: true
   bin:
     biome: bin/biome
-  checksum: 10c0/1040bceed5464784420157781daabb3408017b5ced3acd7cbe86934b9e8ef41638b6544fde21a64b7353afaa4d6be390938fb40d5c17f698df1e349b2b0b70ea
+  checksum: 10c0/0a8e2a3ec88ca75221aaeef2bd0bd9ab5e50b405e1365c41078e52af6f97f17f57934998c3cc87d3212726155c3766b10eb65c992c539a465fce6efda2fc06d0
   languageName: node
   linkType: hard
 
-"@biomejs/cli-android-arm64@npm:2.6.6":
-  version: 2.6.6
-  resolution: "@biomejs/cli-android-arm64@npm:2.6.6"
+"@biomejs/cli-android-arm64@npm:2.6.8":
+  version: 2.6.8
+  resolution: "@biomejs/cli-android-arm64@npm:2.6.8"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-android-x64@npm:2.6.6":
-  version: 2.6.6
-  resolution: "@biomejs/cli-android-x64@npm:2.6.6"
+"@biomejs/cli-android-x64@npm:2.6.8":
+  version: 2.6.8
+  resolution: "@biomejs/cli-android-x64@npm:2.6.8"
   conditions: os=android & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-arm64@npm:2.6.6":
-  version: 2.6.6
-  resolution: "@biomejs/cli-darwin-arm64@npm:2.6.6"
+"@biomejs/cli-darwin-arm64@npm:2.6.8":
+  version: 2.6.8
+  resolution: "@biomejs/cli-darwin-arm64@npm:2.6.8"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-x64@npm:2.6.6":
-  version: 2.6.6
-  resolution: "@biomejs/cli-darwin-x64@npm:2.6.6"
+"@biomejs/cli-darwin-x64@npm:2.6.8":
+  version: 2.6.8
+  resolution: "@biomejs/cli-darwin-x64@npm:2.6.8"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64-musl@npm:2.6.6":
-  version: 2.6.6
-  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.6.6"
+"@biomejs/cli-linux-arm64-musl@npm:2.6.8":
+  version: 2.6.8
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.6.8"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64@npm:2.6.6":
-  version: 2.6.6
-  resolution: "@biomejs/cli-linux-arm64@npm:2.6.6"
+"@biomejs/cli-linux-arm64@npm:2.6.8":
+  version: 2.6.8
+  resolution: "@biomejs/cli-linux-arm64@npm:2.6.8"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64-musl@npm:2.6.6":
-  version: 2.6.6
-  resolution: "@biomejs/cli-linux-x64-musl@npm:2.6.6"
+"@biomejs/cli-linux-x64-musl@npm:2.6.8":
+  version: 2.6.8
+  resolution: "@biomejs/cli-linux-x64-musl@npm:2.6.8"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64@npm:2.6.6":
-  version: 2.6.6
-  resolution: "@biomejs/cli-linux-x64@npm:2.6.6"
+"@biomejs/cli-linux-x64@npm:2.6.8":
+  version: 2.6.8
+  resolution: "@biomejs/cli-linux-x64@npm:2.6.8"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-arm64@npm:2.6.6":
-  version: 2.6.6
-  resolution: "@biomejs/cli-win32-arm64@npm:2.6.6"
+"@biomejs/cli-win32-arm64@npm:2.6.8":
+  version: 2.6.8
+  resolution: "@biomejs/cli-win32-arm64@npm:2.6.8"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-x64@npm:2.6.6":
-  version: 2.6.6
-  resolution: "@biomejs/cli-win32-x64@npm:2.6.6"
+"@biomejs/cli-win32-x64@npm:2.6.8":
+  version: 2.6.8
+  resolution: "@biomejs/cli-win32-x64@npm:2.6.8"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -657,9 +657,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@maplibre/maplibre-gl-style-spec@npm:^26.5.1":
-  version: 26.6.0
-  resolution: "@maplibre/maplibre-gl-style-spec@npm:26.6.0"
+"@maplibre/maplibre-gl-style-spec@npm:^26.6.0":
+  version: 26.8.0
+  resolution: "@maplibre/maplibre-gl-style-spec@npm:26.8.0"
   dependencies:
     "@mapbox/jsonlint-lines-primitives": "npm:^2.0.3"
     "@mapbox/unitbezier": "npm:^1.0.0"
@@ -671,7 +671,7 @@ __metadata:
     gl-style-format: dist/gl-style-format.mjs
     gl-style-migrate: dist/gl-style-migrate.mjs
     gl-style-validate: dist/gl-style-validate.mjs
-  checksum: 10c0/e304a9d0df81b82c11c07d467a0b081f52ae80dac3bde2b2375d2b61ee2d2b9340584685fb6fc41024a76bf7d2a736f890c6f63f39116a3eb361eb494cae44b2
+  checksum: 10c0/19559be6d6d3ea8508dd493740fafecb2cc97e4a7601faef08271c22470ff6e4d651d1c14f38ac19a2b0a7d241495bab9c2e89ff3f99a45adfc1ede2d3cb9d7d
   languageName: node
   linkType: hard
 
@@ -707,65 +707,65 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:16.4.5":
-  version: 16.4.5
-  resolution: "@next/env@npm:16.4.5"
-  checksum: 10c0/5c93b1fcc7aa2718a6043a043bb3a98213b543a96876f61def80a21ce42c2a150887448be894d3ef47622d2fde7639c01b411a52fae8fee30b67ce85c90b17dd
+"@next/env@npm:16.4.6":
+  version: 16.4.6
+  resolution: "@next/env@npm:16.4.6"
+  checksum: 10c0/250195b2e55869e2dd3178e0445e8933f6a0919dd305eb4e64d68e55e426bc56b0612eb91a602d4d7bc15e8aedcc31dd93b9993d7d790bf3ad5f89f61fbebe97
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:16.4.5":
-  version: 16.4.5
-  resolution: "@next/swc-darwin-arm64@npm:16.4.5"
+"@next/swc-darwin-arm64@npm:16.4.6":
+  version: 16.4.6
+  resolution: "@next/swc-darwin-arm64@npm:16.4.6"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:16.4.5":
-  version: 16.4.5
-  resolution: "@next/swc-darwin-x64@npm:16.4.5"
+"@next/swc-darwin-x64@npm:16.4.6":
+  version: 16.4.6
+  resolution: "@next/swc-darwin-x64@npm:16.4.6"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:16.4.5":
-  version: 16.4.5
-  resolution: "@next/swc-linux-arm64-gnu@npm:16.4.5"
+"@next/swc-linux-arm64-gnu@npm:16.4.6":
+  version: 16.4.6
+  resolution: "@next/swc-linux-arm64-gnu@npm:16.4.6"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:16.4.5":
-  version: 16.4.5
-  resolution: "@next/swc-linux-arm64-musl@npm:16.4.5"
+"@next/swc-linux-arm64-musl@npm:16.4.6":
+  version: 16.4.6
+  resolution: "@next/swc-linux-arm64-musl@npm:16.4.6"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:16.4.5":
-  version: 16.4.5
-  resolution: "@next/swc-linux-x64-gnu@npm:16.4.5"
+"@next/swc-linux-x64-gnu@npm:16.4.6":
+  version: 16.4.6
+  resolution: "@next/swc-linux-x64-gnu@npm:16.4.6"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:16.4.5":
-  version: 16.4.5
-  resolution: "@next/swc-linux-x64-musl@npm:16.4.5"
+"@next/swc-linux-x64-musl@npm:16.4.6":
+  version: 16.4.6
+  resolution: "@next/swc-linux-x64-musl@npm:16.4.6"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:16.4.5":
-  version: 16.4.5
-  resolution: "@next/swc-win32-arm64-msvc@npm:16.4.5"
+"@next/swc-win32-arm64-msvc@npm:16.4.6":
+  version: 16.4.6
+  resolution: "@next/swc-win32-arm64-msvc@npm:16.4.6"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:16.4.5":
-  version: 16.4.5
-  resolution: "@next/swc-win32-x64-msvc@npm:16.4.5"
+"@next/swc-win32-x64-msvc@npm:16.4.6":
+  version: 16.4.6
+  resolution: "@next/swc-win32-x64-msvc@npm:16.4.6"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -1753,7 +1753,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hospital-search@workspace:."
   dependencies:
-    "@biomejs/biome": "npm:2.6.6"
+    "@biomejs/biome": "npm:2.6.8"
     "@tailwindcss/postcss": "npm:4.3.5"
     "@testing-library/dom": "npm:10.4.2"
     "@testing-library/jest-dom": "npm:6.9.1"
@@ -1764,14 +1764,14 @@ __metadata:
     "@vitejs/plugin-react": "npm:6.3.0"
     autoprefixer: "npm:10.6.2"
     jsdom: "npm:29.1.1"
-    maplibre-gl: "npm:6.17.0"
-    next: "npm:16.4.5"
-    postcss: "npm:8.5.32"
+    maplibre-gl: "npm:6.18.0"
+    next: "npm:16.4.6"
+    postcss: "npm:8.5.33"
     react: "npm:19.3.1"
     react-dom: "npm:19.3.1"
     tailwindcss: "npm:4.3.5"
     typescript: "npm:6.0.3"
-    vite: "npm:8.3.7"
+    vite: "npm:8.3.8"
     vitest: "npm:4.1.12"
   languageName: unknown
   linkType: soft
@@ -2024,16 +2024,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"maplibre-gl@npm:6.17.0":
-  version: 6.17.0
-  resolution: "maplibre-gl@npm:6.17.0"
+"maplibre-gl@npm:6.18.0":
+  version: 6.18.0
+  resolution: "maplibre-gl@npm:6.18.0"
   dependencies:
     "@mapbox/point-geometry": "npm:^1.1.0"
     "@mapbox/tiny-sdf": "npm:^2.3.0"
     "@mapbox/unitbezier": "npm:^1.0.0"
     "@mapbox/vector-tile": "npm:^3.0.0"
     "@maplibre/geojson-vt": "npm:^6.3.0"
-    "@maplibre/maplibre-gl-style-spec": "npm:^26.5.1"
+    "@maplibre/maplibre-gl-style-spec": "npm:^26.6.0"
     "@maplibre/mlt": "npm:^1.3.0"
     "@maplibre/vt-pbf": "npm:^4.3.3"
     "@types/geojson": "npm:^7946.0.16"
@@ -2046,7 +2046,7 @@ __metadata:
     potpack: "npm:^2.1.0"
     quickselect: "npm:^3.0.0"
     tinyqueue: "npm:^3.0.0"
-  checksum: 10c0/b9d8d2628a75b2468168d053ec7e41ea147ded26547e8e826e4bfb1d7b37ff10c1df6aa9144b6dc778305d619731751c6bcec3553ccbb93ceeef9fd347ac35cb
+  checksum: 10c0/abf00f74d21f56002d9fe08866c8f029125f6fd56b62abd5a36306e65762f17040d5a3279e8d87e7d37841356c6706a65fc0d37cb9acff4496c4e5bb27d35a0c
   languageName: node
   linkType: hard
 
@@ -2103,19 +2103,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:16.4.5":
-  version: 16.4.5
-  resolution: "next@npm:16.4.5"
+"next@npm:16.4.6":
+  version: 16.4.6
+  resolution: "next@npm:16.4.6"
   dependencies:
-    "@next/env": "npm:16.4.5"
-    "@next/swc-darwin-arm64": "npm:16.4.5"
-    "@next/swc-darwin-x64": "npm:16.4.5"
-    "@next/swc-linux-arm64-gnu": "npm:16.4.5"
-    "@next/swc-linux-arm64-musl": "npm:16.4.5"
-    "@next/swc-linux-x64-gnu": "npm:16.4.5"
-    "@next/swc-linux-x64-musl": "npm:16.4.5"
-    "@next/swc-win32-arm64-msvc": "npm:16.4.5"
-    "@next/swc-win32-x64-msvc": "npm:16.4.5"
+    "@next/env": "npm:16.4.6"
+    "@next/swc-darwin-arm64": "npm:16.4.6"
+    "@next/swc-darwin-x64": "npm:16.4.6"
+    "@next/swc-linux-arm64-gnu": "npm:16.4.6"
+    "@next/swc-linux-arm64-musl": "npm:16.4.6"
+    "@next/swc-linux-x64-gnu": "npm:16.4.6"
+    "@next/swc-linux-x64-musl": "npm:16.4.6"
+    "@next/swc-win32-arm64-msvc": "npm:16.4.6"
+    "@next/swc-win32-x64-msvc": "npm:16.4.6"
     "@swc/helpers": "npm:0.5.23"
     baseline-browser-mapping: "npm:^2.9.19"
     caniuse-lite: "npm:^1.0.30001579"
@@ -2159,7 +2159,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: 10c0/d88fdc4f837f62882cbb31df613a4746371645b231e2e34611e2c99b464c01aef3c9e0272af8d2e1ed60aa15c83aa2b596b379baea28d56bb4caf331b25510c2
+  checksum: 10c0/c387dabdbe5f796afd67fe1cafb9c29ce5e1952335c5df730b04c3b6e2ffaba0837e36ca2b075a6d33bccd6bfb39cf4dc3f35f7fd61dbdfd0b365265fab742c4
   languageName: node
   linkType: hard
 
@@ -2263,14 +2263,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.5.32":
-  version: 8.5.32
-  resolution: "postcss@npm:8.5.32"
+"postcss@npm:8.5.33":
+  version: 8.5.33
+  resolution: "postcss@npm:8.5.33"
   dependencies:
     nanoid: "npm:^3.3.20"
     picocolors: "npm:^1.1.1"
     source-map-js: "npm:^1.2.2"
-  checksum: 10c0/5fa6cad84e277c2ced965dc7e8e7c0b8d7e5b76a6835591b57a43fde46e671d0c8428d365e9141c080abaae5441d495ed77ffd7472c5bd41d6c2154bd03c01d7
+  checksum: 10c0/8711c5ad32a798813ae52dd51024881915ecc6171030f9cc1d3766d1969da20ade4cf71a645d7e54668cb45cb9622eac938dc1ce91fe1f9a0fa5f0bc8cbaa05a
   languageName: node
   linkType: hard
 
@@ -2844,9 +2844,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:8.3.7":
-  version: 8.3.7
-  resolution: "vite@npm:8.3.7"
+"vite@npm:8.3.8":
+  version: 8.3.8
+  resolution: "vite@npm:8.3.8"
   dependencies:
     fsevents: "npm:~2.3.3"
     lightningcss: "npm:^1.33.0"
@@ -2897,7 +2897,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/5433e9c0120edd79479e02d943bcde19ecd74be4c6e8e220bdb120693229425858620d07665baa4adafbcc3d1096a70c86ef179653fa310d777aaed8f6fe74cf
+  checksum: 10c0/21bf5b04159214fbc9f42e297afd26398a3630704959f85290e8b8eb9cac49be20a6a37a5765bfdb997b606c21ccba99f991671f81c5da5a590ae5cedad3e127
   languageName: node
   linkType: hard
 
